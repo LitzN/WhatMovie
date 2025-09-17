@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results for {{ query }}</title>
+</head>
+<body>
+    <h1>Results for "{{ query }}"</h1>
+    <ul>
+        {% for movie in movies %}
+        <li>
+            <strong>{{ movie.title }}</strong> ({{ movie.release_date or "N/A" }})<br>
+            {% if movie.poster %}
+                <img src="{{ movie.poster }}" alt="Poster" width="150">
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back</a>
+</body>
+</html>
